@@ -7,8 +7,11 @@ void WatchyFiveOclockSomewhere::drawWatchFace() {
 
   float m = currentTime.Minute;
   float h = currentTime.Hour + currentTime.Minute / 60.0;
-  // allow for minute progression
+  // keep the hour at 5 pm
   float h_offset = 150 - h * 30.0;
+
+  // keep the minute at noon
+  //float h_offset = 360 - m * 6.0;
 
 
   display.fillCircle(100, 100, 99, GxEPD_BLACK);
